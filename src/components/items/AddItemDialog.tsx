@@ -145,7 +145,7 @@ export function AddItemDialog({ open, onOpenChange, onSubmit, editingItem }: Add
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[520px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="font-display italic text-3xl font-medium tracking-tight">
+          <DialogTitle className="font-sans text-2xl font-bold tracking-tight">
             {isEditing ? 'Edit Item' : 'Add New Item'}
           </DialogTitle>
           <DialogDescription>

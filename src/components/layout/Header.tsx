@@ -22,14 +22,14 @@ export function Header() {
   const currentView = searchParams.get('view');
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center px-4 max-w-6xl">
         <Link href="/" className="flex items-center gap-2 mr-6 shrink-0 group">
-          <BookOpen className="h-6 w-6 text-primary transition-transform group-hover:-rotate-12" />
-          <span className="font-display italic font-semibold text-2xl hidden sm:inline tracking-tight">Dairy Manager</span>
+          <BookOpen className="h-6 w-6 text-primary transition-transform group-hover:scale-110 group-hover:-rotate-6" />
+          <span className="font-sans font-bold text-xl hidden sm:inline tracking-tight">Dairy Manager</span>
         </Link>
 
-        <nav className="flex items-center gap-1 flex-1 overflow-x-auto scrollbar-none">
+        <nav className="flex items-center gap-1.5 flex-1 overflow-x-auto scrollbar-none">
           {navItems.map((item) => {
             const Icon = item.icon;
             // Active if on '/' with matching view param (or null view for "All")
@@ -40,11 +40,11 @@ export function Header() {
             return (
               <Link key={item.href} href={item.href}>
                 <Button
-                  variant="ghost"
+                  variant={isActive ? "secondary" : "ghost"}
                   size="sm"
                   className={cn(
-                    "gap-2 whitespace-nowrap rounded-none hover:bg-transparent hover:text-foreground",
-                    isActive ? "ink-underline text-foreground" : "text-muted-foreground"
+                    "gap-2 whitespace-nowrap rounded-full transition-all duration-200",
+                    isActive ? "bg-primary/10 text-primary hover:bg-primary/20" : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   <Icon className="h-4 w-4" />

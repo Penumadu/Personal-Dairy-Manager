@@ -98,8 +98,8 @@ export function ItemCard({ item, onEdit, onDelete, onToggleFavorite, onToggleArc
   return (
     <>
       <Card className={cn(
-        'group relative flex flex-col card-hover border-border/60 bg-card overflow-hidden',
-        item.favorite && 'ring-1 ring-primary/40 border-primary/20',
+        'group relative flex flex-col card-hover border bg-card overflow-hidden shadow-sm',
+        item.favorite && 'ring-1 ring-primary border-primary/50',
       )}>
         <CardHeader className="pb-3 pt-5 px-5">
           <div className="flex items-start justify-between gap-2">
@@ -108,8 +108,8 @@ export function ItemCard({ item, onEdit, onDelete, onToggleFavorite, onToggleArc
                 <Icon className="h-3.5 w-3.5" />
               </span>
               <div className="min-w-0">
-                <h3 className="font-display font-semibold leading-tight truncate text-lg tracking-tight">{item.title}</h3>
-                <p className="text-[11px] font-medium tracking-wide text-muted-foreground mt-1 uppercase">
+                <h3 className="font-sans font-semibold leading-tight truncate text-lg tracking-tight">{item.title}</h3>
+                <p className="text-xs font-medium text-muted-foreground mt-1">
                   {format(toDate(item.createdAt), 'MMM d, yyyy')}
                 </p>
               </div>
