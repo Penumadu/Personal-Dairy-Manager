@@ -92,14 +92,14 @@ export default function DashboardPage() {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
         <div>
-          <h1 className="font-display italic font-medium text-4xl tracking-tight">{pageTitle}</h1>
+          <h1 className="font-display font-bold text-4xl tracking-tight">{pageTitle}</h1>
           {!loading && (
-            <p className="text-muted-foreground mt-2 text-sm font-medium tracking-wide uppercase">
+            <p className="text-muted-foreground mt-2 text-sm font-semibold tracking-wider uppercase opacity-80">
               {filteredItems.length} item{filteredItems.length !== 1 ? 's' : ''}
             </p>
           )}
         </div>
-        <Button onClick={() => setShowAddDialog(true)} className="gap-2 shrink-0 rounded-full px-6">
+        <Button onClick={() => setShowAddDialog(true)} className="gap-2 shrink-0 rounded-full px-6 shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(255,255,255,0.05)] transition-transform hover:scale-105 active:scale-95">
           <Plus className="h-4 w-4" />
           Add Item
         </Button>
@@ -134,7 +134,7 @@ export default function DashboardPage() {
 
       {/* View Mode Tabs (only when viewing All/non-special views) */}
       {!isFavorites && !isArchived && (
-        <div className="flex gap-4 border-b border-border/50 pb-px">
+        <div className="flex gap-2 bg-secondary/50 p-1 rounded-xl w-fit border border-border/50">
           {VIEW_TABS.map((tab) => {
             const TabIcon = tab.icon;
             const isActive = viewMode === tab.value;
@@ -149,10 +149,10 @@ export default function DashboardPage() {
                   window.dispatchEvent(new PopStateEvent('popstate'));
                 }}
                 className={cn(
-                  'flex items-center gap-2 px-1 py-2 text-sm font-medium transition-colors',
+                  'flex items-center gap-2 px-4 py-2 text-sm font-semibold transition-all rounded-lg',
                   isActive
-                    ? 'ink-underline text-foreground'
-                    : 'text-muted-foreground hover:text-foreground',
+                    ? 'bg-background shadow-sm text-foreground'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-background/50',
                 )}
               >
                 <TabIcon className="h-4 w-4" />

@@ -108,8 +108,8 @@ export function ItemCard({ item, onEdit, onDelete, onToggleFavorite, onToggleArc
                 <Icon className="h-3.5 w-3.5" />
               </span>
               <div className="min-w-0">
-                <h3 className="font-sans font-semibold leading-tight truncate text-lg tracking-tight">{item.title}</h3>
-                <p className="text-xs font-medium text-muted-foreground mt-1">
+                <h3 className="font-display font-bold leading-tight truncate text-xl tracking-tight">{item.title}</h3>
+                <p className="text-xs font-semibold text-muted-foreground mt-1 opacity-80">
                   {format(toDate(item.createdAt), 'MMM d, yyyy')}
                 </p>
               </div>
