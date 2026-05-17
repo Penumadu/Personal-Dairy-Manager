@@ -276,7 +276,6 @@ export function AddItemDialog({ open, onOpenChange, onSubmit, editingItem }: Add
                         mode="single"
                         selected={reminderDate}
                         onSelect={setReminderDate}
-                        initialFocus
                       />
                     </PopoverContent>
                   </Popover>
